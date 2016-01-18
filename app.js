@@ -24,6 +24,15 @@ var app = angular.module('app', ['schemaForm-file-upload', 'pascalprecht.transla
       }
     }
   };
+  $scope.flowinit = {
+      target: '/dev/flow/upload/',
+      headers: {
+          'X-CSRFToken': $scope.csrftoken
+      },
+      /*generateUniqueIdentifier: function (file) {
+          return file.name + "-" + file.size + "-" + Date.now();
+      }*/
+  };
   $scope.model = { image_id: { file: { placeholder: 'somephoto.jpg' }} };
   $scope.success = function($flow, $file, message){
     $scope.model.image_id = message.id;
