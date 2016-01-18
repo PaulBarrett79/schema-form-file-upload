@@ -25,10 +25,10 @@ var app = angular.module('app', ['schemaForm-file-upload', 'pascalprecht.transla
     }
   };
   $scope.flowinit = {
-      target: '/dev/flow/upload/',
+      target: '/dev/flow/upload/',/*
       headers: {
           'X-CSRFToken': $scope.csrftoken
-      },
+      },*/
       /*generateUniqueIdentifier: function (file) {
           return file.name + "-" + file.size + "-" + Date.now();
       }*/
