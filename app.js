@@ -55,8 +55,8 @@ var app = angular.module('app', ['schemaForm-file-upload', 'pascalprecht.transla
            flow: {
              imageOnly: false,
              dropEnabled: false,
-             init: 'flowinit',
-             fileSuccess: 'success'
+             init: $scope.flowInit,
+             fileSuccess: 'success',
            }
          }
        }
