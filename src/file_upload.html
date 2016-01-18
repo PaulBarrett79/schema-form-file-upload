@@ -22,11 +22,11 @@
           <h4 class="modal-title">{{title}} and extra</h4>
         </div>
         <div class="modal-body">
-          <div flow-init="flowinit" flow-name="filedata.flow" flow-files-submitted="$flow.upload()"
+          <div flow-init="flow.init" flow-name="filedata.flow" flow-files-submitted="$flow.upload()"
              flow-file-added="!flow.imageOnly || !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
              flow-drop flow-drop-enabled="!!flow.dropEnabled" 
              flow-drag-enter="!!flow.dropEnabled ? flowClass='flow-drag-enter' : flowClass={}" flow-drag-leave="flowClass={}" ng-class="flowClass"
-             flow-file-success="success($flow, $file, $message, this)"
+             flow-file-success="flow.fileSuccess($flow, $file, $message, this)"
              >
             <div class="file-upload-wrapper center-block">
               <!--<div ng-if="flow.imageOnly" class="img-thumbnail" ng-hide="$flow.files.length">
