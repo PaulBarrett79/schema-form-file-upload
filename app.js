@@ -50,7 +50,6 @@ var app = angular.module('app', ['schemaForm-file-upload', 'pascalprecht.transla
      {
        key: 'image_id',
        uploadOptions: {
-         backdrop: true,
          modal: {
            uploadStarted: $scope.uploadStarted,
            flow: {
