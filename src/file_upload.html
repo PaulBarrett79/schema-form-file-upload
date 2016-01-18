@@ -19,14 +19,14 @@
       <div class="modal-content">
         <div class="modal-header" ng-show="title">
           <button type="button" class="close" ng-click="$hide()">&times;</button>
-          <h4 class="modal-title">{{title}}</h4>
+          <h4 class="modal-title">{{title}} and extra</h4>
         </div>
         <div class="modal-body">
-          <div flow-init flow-files-submitted="$flow.upload()"
+          <div flow-init="flowinit()" flow-files-submitted="$flow.upload()"
              flow-file-added="!flow.imageOnly || !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
              flow-drop flow-drop-enabled="!!flow.dropEnabled" 
              flow-drag-enter="!!flow.dropEnabled ? flowClass='flow-drag-enter' : flowClass={}" flow-drag-leave="flowClass={}" ng-class="flowClass"
-             flow-file-success="$root.fileSuccess($flow, $file, $message, this)"
+             flow-file-success="success($flow, $file, $message, this)"
              >
             <div class="file-upload-wrapper center-block">
               <!--<div ng-if="flow.imageOnly" class="img-thumbnail" ng-hide="$flow.files.length">
