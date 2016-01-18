@@ -53,8 +53,9 @@ var app = angular.module('app', ['schemaForm-file-upload', 'pascalprecht.transla
          modal: {
            uploadStarted: $scope.uploadStarted,
            flow: {
-             imageOnly: true,
-             dropEnabled: true,
+             imageOnly: false,
+             dropEnabled: false,
+             init: 'flowInit',
              fileSuccess: 'success'
            }
          }
