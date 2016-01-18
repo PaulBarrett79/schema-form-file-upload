@@ -8,7 +8,7 @@
       </div>
       <!-- <button type="button" class="{{form.uploadOptions.cssClass || 'btn btn-sm btn-flat btn-success'}}" data-template="assets/upload/file.html" bs-modal="{{form.uploadOptions.modal}}" >{{'buttons.upload_file' | translate }}</button> -->
       <button ng-click="uploadStarted()">Test scope</button>
-      <div flow-init="{ target: '/dev/flow/upload/' }" flow-name="filedata.flow" flow-files-submitted="$flow.upload()"
+      <div flow-init="form.uploadOptions.modal.flow.init" flow-name="filedata.flow" flow-files-submitted="$flow.upload()"
              flow-file-added="!form.uploadOptions.modal.flow.imageOnly || !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
              flow-drop flow-drop-enabled="!form.uploadOptions.modal.flow.dropEnabled" 
              flow-drag-enter="!!form.uploadOptions.modal.flow.dropEnabled ? flowClass='flow-drag-enter' : flowClass={}" flow-drag-leave="flowClass={}" ng-class="flowClass"
