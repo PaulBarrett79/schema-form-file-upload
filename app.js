@@ -62,4 +62,5 @@ var app = angular.module('app', ['schemaForm-file-upload', 'pascalprecht.transla
        }
      }
   ];
+  console.log('This controller is definitely getting used')
 });
