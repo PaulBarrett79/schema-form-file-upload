@@ -33,6 +33,7 @@ var app = angular.module('app', ['schemaForm-file-upload', 'pascalprecht.transla
           return file.name + "-" + file.size + "-" + Date.now();
       }*/
   };
+  $scope.filedata = {};
   $scope.model = { image_id: { file: { placeholder: 'somephoto.jpg' }} };
   $scope.success = function($flow, $file, message){
     $scope.model.image_id = message.id;
