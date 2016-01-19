@@ -21,8 +21,7 @@
             <div ng-if="flow.imageOnly" class="img-thumbnail" ng-show="$flow.files.length">
               <img width="200" flow-img="$flow.files[0]" />
             </div>-->
-            {{$flow.files}}
-            <span ng-bind-html="<p>$flow.files</p>"></span>
+            <span ng-bind-html="'<p>$flow.files</p>'"></span>
             <div ng-show="$flow.files.length" class="progress progress-striped" ng-class="{active: $flow.files[0].isUploading()}">
               
               <div class="progress-bar" role="progressbar"
