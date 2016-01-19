@@ -12,7 +12,7 @@
              flow-file-added="!form.uploadOptions.modal.flow.imageOnly || !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
              flow-drop flow-drop-enabled="!form.uploadOptions.modal.flow.dropEnabled" 
              flow-drag-enter="!!form.uploadOptions.modal.flow.dropEnabled ? flowClass='flow-drag-enter' : flowClass={}" flow-drag-leave="flowClass={}" ng-class="flowClass"
-             flow-file-success="evalExpr(form.uploadOptions.modal.flow.success, {'flow':$flow, 'file':$file, 'message':$message}))"
+             flow-file-success="evalExpr(form.uploadOptions.modal.flow.success, {'flow':$flow, 'file':$file, 'message':$message})"
              >
            <div class="file-upload-wrapper center-block">
             <!--<div ng-if="flow.imageOnly" class="img-thumbnail" ng-hide="$flow.files.length">
