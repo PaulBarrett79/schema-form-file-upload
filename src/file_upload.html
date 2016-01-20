@@ -32,7 +32,7 @@
             <div ng-repeat="is_uploading in $flow.files" class="col-xs-2">
               <div class="img-thumbnail text-center">
                 <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" />
-                <img width="100" ng-if="!!{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" ng-src="images/search" />
+                <img width="100" ng-if="{png:0,gif:0,jpg:0,jpeg:0}[is_uploading.getExtension()]" ng-src="images/search-compounds.png" />
                 <div>{{is_uploading.name}}<br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index}); $flow.removeFile(is_uploading)"><small>remove</small></span></div>
                 <div ng-show="is_uploading.isUploading()" class="progress progress-striped" ng-class="{active: is_uploading.isUploading()}">
 
