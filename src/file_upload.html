@@ -29,21 +29,21 @@
               <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
             </div> -->
 
-            <div ng-repeat="is_uploading in $flow.files" class="img-thumbnail">
+            <div ng-repeat="is_uploading in $flow.files" class="col-xs-2">
+              <div class="img-thumbnail text-center">
+                <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" />
+                <div>{{is_uploading.name}}</div>
+                <div ng-show="is_uploading.isUploading()" class="progress progress-striped" ng-class="{active: is_uploading.isUploading()}">
 
-              <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" />
-              <div>{{is_uploading.name}}</div>
-              <div ng-show="is_uploading.isUploading()" class="progress progress-striped" ng-class="{active: is_uploading.isUploading()}">
-
-                <div class="progress-bar" role="progressbar"
-                     aria-valuenow="{{is_uploading.progress() * 100}}"
-                     aria-valuemin="0"
-                     aria-valuemax="100"
-                     ng-style="{width: (is_uploading.progress() * 100) + '%'}">
-                  <span class="sr-only">{{is_uploading.progress()}}% Complete</span>
+                  <div class="progress-bar" role="progressbar"
+                       aria-valuenow="{{is_uploading.progress() * 100}}"
+                       aria-valuemin="0"
+                       aria-valuemax="100"
+                       ng-style="{width: (is_uploading.progress() * 100) + '%'}">
+                    <span class="sr-only">{{is_uploading.progress()}}% Complete</span>
+                  </div>
                 </div>
               </div>
-
             </div>
 
 
