@@ -3,7 +3,7 @@
   <div class="form-group">
     <div class="gallery-box">
       <span ng-show="$$value$$.file_name" class="title">{{$$value$$.file_name}}</span>
-
+      {{$$value$$}}
       <div id="files_uploaded" ng-show="$$value$$ != ''" class="alert-success">
         <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
       </div>
@@ -26,17 +26,17 @@
             <div ng-if="flow.imageOnly" class="img-thumbnail" ng-show="$flow.files.length">
               <img width="200" flow-img="$flow.files[0]" />
             </div>-->
-            <div ng-show="$flow.files.length" class="progress progress-striped" ng-class="{active: $flow.files[0].isUploading()}">
+            <div ng-show="$file.isUploading()" class="progress progress-striped" ng-class="{active: $file.isUploading()}">
 
               <div class="progress-bar" role="progressbar"
-                   aria-valuenow="{{$flow.files[0].progress() * 100}}"
+                   aria-valuenow="{{$file.progress() * 100}}"
                    aria-valuemin="0"
                    aria-valuemax="100"
-                   ng-style="{width: ($flow.files[0].progress() * 100) + '%'}">
-                <span class="sr-only">{{$flow.files[0].progress()}}% Complete</span>
+                   ng-style="{width: ($file.progress() * 100) + '%'}">
+                <span class="sr-only">{{$file.progress()}}% Complete</span>
               </div>
             </div>
-            <div class="buttons" ng-hide="$flow.files.length">
+            <div class="buttons">
               <span class="btn btn-flat btn-primary" flow-btn="">Select File<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
               <span ng-hide="!form.uploadOptions.modal.flow.dropEnabled">
                 <b>{{ 'or' | translate }}</b>
