@@ -33,8 +33,7 @@
               <div class="img-thumbnail text-center">
                 <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" />
                 <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" ng-src="images/search" />
-                <div>{{is_uploading.name}}</div>
-                <div><small ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index})">remove</small></div>
+                <div>{{is_uploading.name}}<br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index})"><small>remove</small></span></div>
                 <div ng-show="is_uploading.isUploading()" class="progress progress-striped" ng-class="{active: is_uploading.isUploading()}">
 
                   <div class="progress-bar" role="progressbar"
