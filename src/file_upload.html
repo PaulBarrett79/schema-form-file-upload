@@ -10,7 +10,7 @@
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
           <img width="100" ng-src="images/search-compounds.png" />
-          <div style="bottom: 5px; position: absolute; width:110px;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printNameme}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, uniqueidentifier:attachment.uniqueIdentifier});"><small>[remove]</small></span></div>
+          <div style="bottom: 5px; position: absolute; width:110px;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, uniqueidentifier:attachment.uniqueIdentifier});"><small>[remove]</small></span></div>
           
         </div>
       </div>
@@ -42,7 +42,7 @@
               <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
             </div> -->
 
-            <div ng-repeat="is_uploading in $flow.files" ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2 col-lg-1'">
+            <!-- <div ng-repeat="is_uploading in $flow.files" ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2 col-lg-1'">
               <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
                 <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" />
                 <img width="100" ng-if="{png:0,gif:0,jpg:0,jpeg:0}[is_uploading.getExtension()]" ng-src="images/search-compounds.png" />
@@ -58,7 +58,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="clearfix"><br></div>
             <div class="buttons">
