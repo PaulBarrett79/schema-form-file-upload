@@ -29,9 +29,10 @@
               <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
             </div> -->
 
-            <div ng-repeat="is_uploading in $flow.files">
-              {{is_uploading.getExtension()}}
-              <img width="100" ng-if="is_uploading.getExtension() == 'png'" flow-img="is_uploading" />
+            <div ng-repeat="is_uploading in $flow.files" class="img-thumbnail">
+
+              <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" />
+              <div>{{is_uploading.name}}</div>
               <div ng-show="is_uploading.isUploading()" class="progress progress-striped" ng-class="{active: is_uploading.isUploading()}">
 
                 <div class="progress-bar" role="progressbar"
@@ -42,6 +43,7 @@
                   <span class="sr-only">{{is_uploading.progress()}}% Complete</span>
                 </div>
               </div>
+
             </div>
 
 
