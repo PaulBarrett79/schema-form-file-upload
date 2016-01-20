@@ -4,7 +4,7 @@ angular.module('schemaForm-file-upload', ['schemaForm', 'flow']).config(
   function(schemaFormProvider,  schemaFormDecoratorsProvider, sfPathProvider) {
 
     var file_upload = function(name, schema, options) {
-    if (schema.type === 'object' && schema.format == 'file_upload') {
+    if (schema.type === 'array' && schema.format == 'file_upload') {
       var f = schemaFormProvider.stdFormObj(name, schema, options);
       f.key  = options.path;
       f.type = 'file_upload';
