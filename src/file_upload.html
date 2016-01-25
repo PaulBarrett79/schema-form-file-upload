@@ -9,7 +9,7 @@
       <div ng-repeat="attachment in $$value$$.attachments" ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2 col-lg-1'">
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
-          <img width="100" ng-src="images/search-compounds.png" />
+          <img width="100" ng-src="evalExpr(form.uploadOptions.modal.flow.imageFunction, {url:attachment.url})" />
           <div style="bottom: 5px; position: absolute; width:110px;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, uniqueidentifier:attachment.uniqueIdentifier});"><small>[remove]</small></span></div>
           
         </div>
