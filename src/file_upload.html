@@ -2,14 +2,14 @@
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <div class="form-group">
     <div class="gallery-box">
-      <div id="files_uploaded" ng-show="$$value$$ != ''" class="alert-success">
+      <!-- <div id="files_uploaded" ng-show="$$value$$ != ''" class="alert-success">
         <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
-      </div>
+      </div> -->
 
       <div ng-repeat="attachment in $$value$$.attachments" ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2 col-lg-1'">
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
-          <img width="100" ng-src="evalExpr(form.uploadOptions.modal.flow.imageFunction, {url:attachment.url})" />
+          <img width="100" ng-src="{{attachment.url}}" />
           <div style="bottom: 5px; position: absolute; width:110px;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, uniqueidentifier:attachment.uniqueIdentifier});"><small>[remove]</small></span></div>
           
         </div>
@@ -21,7 +21,7 @@
 
 
       <!-- Have an evalExpr which determines if you are a modal or not - and use the correct one of these for whether dataoverviewctrl is visible or not -->
-      <div ng-show="evalExpr('youAreInModal') == true">Hi there</div>
+      <!-- <div ng-show="evalExpr('youAreInModal') == true">Hi there</div> -->
 
 
       <div flow-init="evalExpr(form.uploadOptions.modal.flow.init)" flow-files-submitted="$flow.upload()"
