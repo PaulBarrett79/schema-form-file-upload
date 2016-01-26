@@ -24,8 +24,8 @@
             <div ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2'">
               <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
                 <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
-                <img width="100" ng-src="images/add-placeholder.png" />
-                <span class="btn btn-flat btn-primary" flow-btn="" >Add a file<br><input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
+                <img width="100" ng-src="images/add-placeholder.png" /><br>
+                <span class="btn btn-flat btn-primary" flow-btn="" >Add a file<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
                 
               </div>
             </div>
@@ -38,7 +38,7 @@
 
 
       <!-- Have an evalExpr which determines if you are a modal or not - and use the correct one of these for whether dataoverviewctrl is visible or not -->
-      <div ng-show="evalExpr('youAreInModal') == true">Hi there</div>
+      
 
 
       
