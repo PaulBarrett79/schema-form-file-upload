@@ -10,7 +10,7 @@
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
           <img width="100" ng-src="{{attachment.url}}" />
-          <div style="bottom: 5px; position: absolute; width:110px;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, uniqueidentifier:attachment.uniqueIdentifier});"><small>[remove]</small></span></div>
+          <div style="bottom: 5px; position: absolute; width:110px;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});"><small>[remove]</small></span></div>
           
         </div>
       </div>
@@ -18,8 +18,7 @@
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
           <img width="100" ng-src="images/add-placeholder.png" />
-          <span class="btn btn-flat btn-primary" flow-btn="">Select File<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
-          <div style="bottom: 5px; position: absolute; width:110px;"><span style="font-size: 0.8em; word-wrap: break-word;">Add a file</span><br></div>
+          <span class="btn btn-flat btn-primary" flow-btn="">Add a file<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
           
         </div>
       </div>
