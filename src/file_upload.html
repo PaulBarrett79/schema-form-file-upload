@@ -6,7 +6,7 @@
         <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
       </div> -->
 
-      <div ng-repeat="attachment in $$value$$.attachments" ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2 col-lg-1'">
+      <div ng-repeat="attachment in $$value$$.attachments" ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2'">
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
           <img width="100" ng-src="{{attachment.url}}" />
@@ -21,7 +21,7 @@
              flow-file-success="evalExpr(form.uploadOptions.modal.flow.success, {file:$file, formkey:form.key})"
              >
            <div class="file-upload-wrapper center-block">
-            <div ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2 col-lg-1'">
+            <div ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2'">
               <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
                 <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
                 <img width="100" ng-src="images/add-placeholder.png" />
@@ -38,7 +38,7 @@
 
 
       <!-- Have an evalExpr which determines if you are a modal or not - and use the correct one of these for whether dataoverviewctrl is visible or not -->
-      <!-- <div ng-show="evalExpr('youAreInModal') == true">Hi there</div> -->
+      <div ng-show="evalExpr('youAreInModal') == true">Hi there</div>
 
 
       
