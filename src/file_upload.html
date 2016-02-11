@@ -10,8 +10,8 @@
         {{attachment}}
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
-          <img ng-if="attachment.mimeType.indexOf('image') != 0" width="100" ng-src="{{attachment.url}}" />
-          <img ng-if="attachment.mimeType.indexOf('image') == 0" width="100" ng-src="images/file_placeholder.png" />
+          <img ng-if="attachment.mimeType.indexOf('image') == 0" width="100" ng-src="{{attachment.url}}" />
+          <img ng-if="attachment.mimeType.indexOf('image') == -1" width="100" ng-src="images/file_placeholder.png" />
           <div style="bottom: 5px; position: absolute; left:1%; right:1%;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});"><small>[remove]</small></span></div>
           
         </div>
