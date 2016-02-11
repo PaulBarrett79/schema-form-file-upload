@@ -11,8 +11,8 @@
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
           <img ng-if="attachment.mimeType.indexOf('image') != -1" width="100" ng-src="{{attachment.url}}" />
-          <img ng-if="attachment.mimeType.indexOf('spreadsheetml') != -1 || attachment.mimeType.indexOf('excel') != -1" width="100" ng-src="images/xls-placeholder.png" />
-          <img ng-if="attachment.mimeType.indexOf('wordprocessingml') != -1 || attachment.mimeType.indexOf('msword') != -1" width="100" ng-src="images/word-placeholder.png" />
+          <img ng-if="attachment.mimeType.indexOf('spreadsheetml') != -1 || attachment.mimeType.indexOf('excel') != -1" width="100" ng-src="images/xlsx-placeholder.png" />
+          <img ng-if="attachment.mimeType.indexOf('wordprocessingml') != -1 || attachment.mimeType.indexOf('msword') != -1" width="100" ng-src="images/docx-placeholder.png" />
           <img ng-if="attachment.mimeType.indexOf('pdf') != -1" width="100" ng-src="images/pdf-placeholder.png" />
           <!-- anything else - use the file placeholder -->
           <img ng-if="attachment.mimeType.indexOf('pdf') == -1 && attachment.mimeType.indexOf('image') == -1 && attachment.mimeType.indexOf('spreadsheetml') == -1 && attachment.mimeType.indexOf('excel') == -1 && attachment.mimeType.indexOf('wordprocessingml') == -1 && attachment.mimeType.indexOf('msword') == -1" width="100" ng-src="images/file-placeholder.png" />
