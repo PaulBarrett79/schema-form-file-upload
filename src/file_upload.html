@@ -7,6 +7,7 @@
       </div> -->
 
       <div ng-repeat="attachment in $$value$$.attachments" ng-class="evalExpr('youAreInModal') == true ? 'col-xs-4' : 'col-xs-6 col-sm-3 col-md-2'">
+        {{attachment}}
         <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
           <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
           <img width="100" ng-src="{{attachment.url}}" />
@@ -25,7 +26,7 @@
               <div class="img-thumbnail text-center" style="min-height:150px; width:100%;">
                 <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
                 <img width="100" ng-src="images/add-placeholder.png" /><br>
-                <span class="btn btn-flat btn-primary" flow-btn="" >Add a file here<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
+                <span class="btn btn-flat btn-primary" flow-btn="" >Add a file<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
                 
               </div>
             </div>
