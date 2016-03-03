@@ -3,10 +3,11 @@
   "main": [
     "schema-form-file-upload.min.js"
   ],
-  "version": "0.0.10",
+  "version": "0.0.11",
   "authors": [
     "Cheng Zhu",
-    "Cheng Zhu<cheng@aqmin.com>"
+    "Cheng Zhu<cheng@aqmin.com>",
+    "Paul Barrett<waves@paulbarrettdev.com>"
   ],
   "moduleType": [
     "globals"
