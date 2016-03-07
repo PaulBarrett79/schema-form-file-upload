@@ -19,12 +19,13 @@
               <!-- anything else - use the file placeholder -->
               <img ng-if="attachment.mimeType.indexOf('pdf') == -1 && attachment.mimeType.indexOf('image') == -1 && attachment.mimeType.indexOf('spreadsheetml') == -1 && attachment.mimeType.indexOf('excel') == -1 && attachment.mimeType.indexOf('wordprocessingml') == -1 && attachment.mimeType.indexOf('msword') == -1" width="100" ng-src="images/file-placeholder.png" />
               <!-- <div style="bottom: 5px; position: absolute; left:1%; right:1%;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});"><small>[remove]</small></span></div> -->
+              <span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});" style="position:absolute; top: -10px; right: 0; z-index:1000; cursor:pointer;">
+                <img ng-src="images/thumb-close.png" />
+              </span>
               <div class="thumb-overlay">
                 <p>
                   <span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span>
-                  <span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});" style="position:absolute; right:-15px; top: -15px; cursor:pointer;">
-                    <img ng-src="images/thumb-close.png" />
-                  </span>
+                  
                 </p>
               </div>
               
@@ -45,9 +46,14 @@
                   <div class="text-center col-xs-12 thumb-container">
                     <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
                     
-                    <span class="" flow-btn="" style="cursor:pointer;"><img width="100" ng-src="images/add-placeholder.png" /><input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
+                    <div class="" flow-btn="" style="cursor:pointer;"><img width="100" ng-src="images/add-placeholder.png" /><input type="file" multiple="multiple" style="visibility: hidden; position: absolute;">
+                        <div class="thumb-overlay" style="width:100px;">
+                                    <img width="100" ng-src="images/add-placeholder-hover.png" style="cursor:pointer;"/>
+                                  </div>
+                    </div>
                     
                   </div>
+                  
               
             </div>
           </li>
