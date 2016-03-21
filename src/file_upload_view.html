@@ -2,10 +2,10 @@
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <div class="form-group">
     <div class="gallery-box">
-
-        <h2 class="blue">Edit mode</h2>
+      
+        <h2 class="blue">View mode</h2>
         <ul class="list-inline">
-          <li ng-repeat="attachment in $$value$$.attachments" style="display:inline-table;">
+          <li ng-repeat="attachment in $$value$$.value.attachments" style="display:inline-table;">
             <div class="text-center col-xs-12 thumb-container" >
               <!-- <img width="100" ng-if="{png:1,gif:1,jpg:1,jpeg:1}[is_uploading.getExtension()]" flow-img="is_uploading" /> -->
               <img ng-if="attachment.mimeType.indexOf('image') != -1" width="100" ng-src="{{attachment.url}}" />
@@ -26,36 +26,10 @@
               
             </div>
               
-              
-            
-          </li>
-          <li style="display:inline-table;">
-            <div flow-init="form.uploadOptions.modal.flow.init" flow-files-submitted="$flow.upload()"
-             flow-file-added="!form.uploadOptions.modal.flow.imageOnly || !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
-             flow-drop flow-drop-enabled="!form.uploadOptions.modal.flow.dropEnabled" 
-             flow-drag-enter="!!form.uploadOptions.modal.flow.dropEnabled ? flowClass='flow-drag-enter' : flowClass={}" flow-drag-leave="flowClass={}" ng-class="flowClass"
-             flow-file-success="evalExpr(form.uploadOptions.modal.flow.success, {file:$file, formkey:form.key})"
-             >
-               
-                
-                  <div class="text-center col-xs-12 thumb-container">
-                    
-                    <div class="" flow-btn="" style="cursor:pointer;"><img width="100" ng-src="images/add-placeholder.png" /><input type="file" multiple="multiple" style="visibility: hidden; position: absolute;">
-                        <div class="thumb-overlay" style="width:100px;">
-                                    <img width="100" ng-src="images/add-placeholder-hover.png" style="cursor:pointer;"/>
-                                  </div>
-                    </div>
-                    
-                  </div>
-                  
-              
-            </div>
           </li>
         </ul>
-            
-            
-            
-            <!-- <div id="files_uploaded" ng-show="$$value$$ != ''" class="alert-success">
+        
+           <!-- <div id="files_uploaded" ng-show="$$value$$ != ''" class="alert-success">
               <h2>Previously uploaded</h2>
               <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
             </div> -->
