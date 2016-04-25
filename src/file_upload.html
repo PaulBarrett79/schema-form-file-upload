@@ -1,13 +1,13 @@
 <div class="form-group" ng-class="{'has-error': hasError(), 'has-success': hasSuccess()}">
   <label class="control-label" ng-show="showTitle()">{{form.title}}</label>
   <div class="form-group">
-    <div class="gallery-box">
+    <div class="gallery-box" flow-init="form.uploadOptions.modal.flow.init" flow-files-submitted="$flow.upload()" flow-file-added="evalExpr(form.uploadOptions.modal.flow.sizeCheck, {file:$file, formkey:form.key})" ng-class="flowClass" flow-file-success="evalExpr(form.uploadOptions.modal.flow.success, {file:$file, formkey:form.key})">
       <!-- <div id="files_uploaded" ng-show="$$value$$ != ''" class="alert-success">
         <span ng-repeat="attachment in $$value$$.attachments">{{attachment.printName}}</span>
       </div> -->
 
       <!-- <div ng-repeat="attachment in $$value$$.attachments" > -->
-
+      
         <ul class="list-inline">
           <li ng-repeat="attachment in $$value$$.attachments" style="display:inline-table;">
             <div class="text-center col-xs-12 thumb-container" >
@@ -19,12 +19,12 @@
               <!-- anything else - use the file placeholder -->
               <img ng-if="attachment.mimeType.indexOf('pdf') == -1 && attachment.mimeType.indexOf('image') == -1 && attachment.mimeType.indexOf('spreadsheetml') == -1 && attachment.mimeType.indexOf('excel') == -1 && attachment.mimeType.indexOf('wordprocessingml') == -1 && attachment.mimeType.indexOf('msword') == -1" width="100" ng-src="images/file-placeholder.png" />
               <!-- <div style="bottom: 5px; position: absolute; left:1%; right:1%;"><span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span><br><span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});"><small>[remove]</small></span></div> -->
-              <span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});" style="position:absolute; top: -10px; right: 0; z-index:1000; cursor:pointer;">
+              <span ng-click="evalExpr(form.uploadOptions.modal.flow.removeFile, {formkey:form.key, index:$index, url:attachment.url});$flow.removeFile($flow.files[$index]);" style="position:absolute; top: -10px; right: 0; z-index:1000; cursor:pointer;">
                 <img ng-src="images/thumb-close.png" />
               </span>
-              <div class="thumb-overlay">
+              <div class="thumb-overlay" style="display:flex; flex-direction:column; align-items:stretch; justify-content: center; width:100px;">
                 <p>
-                  <span style="font-size: 0.8em; word-wrap: break-word;">{{attachment.printName}}</span>
+                  <span style="font-size: 0.8em; word-wrap: break-word; word-break: break-word;">{{attachment.printName}}</span>
                   
                 </p>
               </div>
@@ -35,12 +35,7 @@
             
           </li>
           <li style="display:inline-table;">
-            <div flow-init="form.uploadOptions.modal.flow.init" flow-files-submitted="$flow.upload()"
-             flow-file-added="!form.uploadOptions.modal.flow.imageOnly || !!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
-             flow-drop flow-drop-enabled="!form.uploadOptions.modal.flow.dropEnabled" 
-             flow-drag-enter="!!form.uploadOptions.modal.flow.dropEnabled ? flowClass='flow-drag-enter' : flowClass={}" flow-drag-leave="flowClass={}" ng-class="flowClass"
-             flow-file-success="evalExpr(form.uploadOptions.modal.flow.success, {file:$file, formkey:form.key})"
-             >
+            <div>
                
                 
                   <div class="text-center col-xs-12 thumb-container">
